@@ -50,9 +50,9 @@ menu = '''
 4. show transactions
 5. add transaction
 6. delete transaction
-7. summarize transactions by date
-8. summarize transactions by month
-9. summarize transactions by year
+7. summarize transactions by date (MM-DD-YYYY)
+8. summarize transactions by month (MM)
+9. summarize transactions by year (YYYY)
 10. summarize transactions by category
 11. print this menu
 '''

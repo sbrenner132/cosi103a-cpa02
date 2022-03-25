@@ -1,6 +1,18 @@
+'''
+transaction.py is a Object Relational Mapping to the transactions table
+
+The ORM will work map SQL rows with the schema
+    (rowid, item_num, amount, category, date, description)
+to Python Dictionaries.
+
+This app will store the data in a SQLite database ~/tracker.db
+
+'''
 import sqlite3
 
 def to_trans_dict(trans_tuple):
+    '''to_trans_dict is a transaction tuple
+    (rowid, item_num, amount, category, date, description)'''
     transaction = {
         'rowid': trans_tuple[0],
         'item_num': trans_tuple[1],
@@ -12,10 +24,11 @@ def to_trans_dict(trans_tuple):
     return transaction
 
 def to_trans_dict_list(trans_tuples):
+    ''' convert a list of transaction tuples into a list of dictionaries'''
     return [to_trans_dict(trans) for trans in trans_tuples]
 
 class Transaction():
-
+    ''' Transaction represents a table of transaction'''
     def __init__(self, dbfile):
         con = sqlite3.connect(dbfile)
         cur = con.cursor()
@@ -57,11 +70,12 @@ class Transaction():
         con.commit()
         con.close()
 
-    def summarize_by_date(self):
+    def summarize_by_date(self, date):
         ''' return a list of transactions grouped by date '''
         con = sqlite3.connect(self.dbfile)
         cur = con.cursor()
-        cur.execute("SELECT date, sum(amount) FROM transactions GROUP BY date")
+        #date format is MM-DD-YYYY
+        cur.execute("SELECT date FROM transactions WHERE date LIKE ?", ('%'+date+'%',))
         tuples = cur.fetchall()
         con.commit()
         con.close()
@@ -69,10 +83,23 @@ class Transaction():
 
     def summarize_by_month(self, month):
         '''return a list of transactions grouped by month from date'''
-        pass
+        con = sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute("SELECT date FROM transactions WHERE date LIKE ?", (month+'-%',))
+        tuples = cur.fetchall()
+        con.commit()
+        con.close()
+        return to_trans_dict_list(tuples)
 
     def summarize_by_year(self, year):
-        pass
+        '''return a list of transactions grouped by year from date'''
+        con = sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute("SELECT date FROM transactions WHERE date LIKE ?", ('%-'+year,))
+        tuples = cur.fetchall()
+        con.commit()
+        con.close()
+        return to_trans_dict_list(tuples)
 
     def summarize_by_category(self):
         '''return a list of transactions grouped by category'''
@@ -83,4 +110,3 @@ class Transaction():
         con.commit()
         con.close()
         return to_trans_dict(tuples)
-
