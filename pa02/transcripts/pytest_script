@@ -1,0 +1,22 @@
+Script started on Fri Mar 25 08:55:19 2022
+[1m[7m%[27m[1m[0m                                                                                ]2;naimulhasan@aphrodite:~/Developer/nuke/cs103/cosi103a-pa02/pa02]1;..03a-pa02/pa02[0m[27m[24m[J[01;32m➜  [36mpa02[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[32mscript[39m [4mpytest_script[24m[20D[32me[32mx[32mi[32mt[39m[39m [39m  [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [16D[32mp[32my[32mt[32me[32mst[39m [4mtest_transaction.py[24m[?1l>[?2004l
+]2;pytest test_transaction.py]1;pytest[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.9.9, pytest-7.1.1, pluggy-1.0.0
+rootdir: /Users/naimulhasan/Developer/nuke/cs103/cosi103a-pa02/pa02, configfile: pytest.ini
+[1mcollecting ... [0m[1mcollected 4 items                                                              [0m
+
+test_transaction.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                                 [100%][0m
+
+[32m============================== [32m[1m4 passed[0m[32m in 0.04s[0m[32m ===============================[0m
+[1m[7m%[27m[1m[0m                                                                                ]2;naimulhasan@aphrodite:~/Developer/nuke/cs103/cosi103a-pa02/pa02]1;..03a-pa02/pa02[0m[27m[24m[J[01;32m➜  [36mpa02[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[32mpytest[39m [4mtest_transaction.py[24m[26D[32ms[32mc[32mr[32mi[32mp[2C[39m[4mp[4my[4mt[4me[4ms[4mt[4m_[4ms[4mc[4mr[4mi[4mp[4mt[24m[24m [24m [24m [24m [24m [24m [20D[32me[32mx[32mi[32mt[39m[39m [39m  [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [16D[32mp[32my[32mt[32me[32mst[39m [4mtest_transaction.py[24m[14D[4mc[4ma[4mt[4me[4mg[4mo[4mr[4my[4m.[4mp[4my[24m[24m [24m [24m [?1l>[?2004l
+]2;pytest test_category.py]1;pytest[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.9.9, pytest-7.1.1, pluggy-1.0.0
+rootdir: /Users/naimulhasan/Developer/nuke/cs103/cosi103a-pa02/pa02, configfile: pytest.ini
+[1mcollecting ... [0m[1mcollected 4 items                                                              [0m
+
+test_category.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                                    [100%][0m
+
+[32m============================== [32m[1m4 passed[0m[32m in 0.12s[0m[32m ===============================[0m
+[1m[7m%[27m[1m[0m                                                                                ]2;naimulhasan@aphrodite:~/Developer/nuke/cs103/cosi103a-pa02/pa02]1;..03a-pa02/pa02[0m[27m[24m[J[01;32m➜  [36mpa02[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[90mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+]2;exit]1;exit
+Script done on Fri Mar 25 08:55:29 2022

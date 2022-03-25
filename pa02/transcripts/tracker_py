@@ -1,0 +1,92 @@
+Script started on Fri Mar 25 08:45:52 2022
+[1m[7m%[27m[1m[0m                                                                                ]2;naimulhasan@aphrodite:~/Developer/nuke/cs103/cosi103a-pa02/pa02]1;..03a-pa02/pa02[0m[27m[24m[J[01;32m➜  [36mpa02[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[1m[31mp[0m[39m[1m[31mp[0m[39m[90mython tracker.py[39m[16D[1m[31mp[1m[31my[0m[39m[1m[31mp[1m[31my[1m[31mt[0m[39m[1m[31mt[1m[31mh[0m[39m[0m[32mp[0m[32my[0m[32mt[0m[32mh[32mo[32mn[39m[39m [39m[4mt[39m[4mr[39m[4ma[39m[4mc[39m[4mk[39m[4me[39m[4mr[39m[4m.[39m[4mp[39m[4my[24m[?1l>[?2004l
+]2;python tracker.py]1;python
+0. quit
+1. show categories
+2. add category
+3. modify category
+4. show transactions
+5. add transaction
+6. delete transaction
+7. summarize transactions by date (MM-DD-YYYY)
+8. summarize transactions by month (MM)
+9. summarize transactions by year (YYYY)
+10. summarize transactions by category
+11. print this menu
+
+> 5
+add transaction
+transaction item no: 0
+amount: 100
+category name: food
+date: 10-05-200 20
+category description: spediture n on food  
+> 4
+show transactions
+
+
+id  item #     amount     category   date       description                   
+------------------------------------------------------------
+1   1          10         random     10-05-2020 Random puchases               
+2   0          100        food       10-05-2020 spediture on food             
+> 5 5
+add transaction
+transaction item no: 3
+amount: 800
+category name: rent
+date: 11-20-2022
+category description: e expedi  nditure on ren                  rent
+> 5
+add transaction
+transaction item no: 2
+amount: 1
+category name: food
+date: 10-06-2022
+category description: food
+> 7
+summarize transactions by date
+Enter a date in MM-DD-YYYY:10  10-05-2020
+
+
+id  item #     amount     category   date       description                   
+------------------------------------------------------------
+1   1          10         random     10-05-2020 Random puchases               
+2   0          100        food       10-05-2020 spediture on food             
+> ^[[A    9
+summarize transactions by year in YYYY
+Enter a year in YYYY: 2020
+
+
+id  item #     amount     category   date       description                   
+------------------------------------------------------------
+1   1          10         random     10-05-2020 Random puchases               
+2   0          100        food       10-05-2020 spediture on food             
+> 10
+summarize transactions by category
+Enter a category: food
+
+
+id  item #     amount     category   date       description                   
+------------------------------------------------------------
+2   0          100        food       10-05-2020 spediture on food             
+4   2          1          food       10-06-2022 food                          
+> 11
+
+0. quit
+1. show categories
+2. add category
+3. modify category
+4. show transactions
+5. add transaction
+6. delete transaction
+7. summarize transactions by date (MM-DD-YYYY)
+8. summarize transactions by month (MM)
+9. summarize transactions by year (YYYY)
+10. summarize transactions by category
+11. print this menu
+
+> 0
+bye
+[1m[7m%[27m[1m[0m                                                                                ]2;naimulhasan@aphrodite:~/Developer/nuke/cs103/cosi103a-pa02/pa02]1;..03a-pa02/pa02[0m[27m[24m[J[01;32m➜  [36mpa02[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[90mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+]2;exit]1;exit
+Script done on Fri Mar 25 08:48:56 2022

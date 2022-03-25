@@ -1,0 +1,32 @@
+Script started on Fri Mar 25 08:37:56 2022
+[1m[7m%[27m[1m[0m                                                                                ]2;naimulhasan@aphrodite:~/Developer/nuke/cs103/cosi103a-pa02/pa02]1;..03a-pa02/pa02[0m[27m[24m[J[01;32m➜  [36mpa02[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[1m[31mp[0m[39m[1m[31mp[0m[39m[90mylint tracker.py[39m[16D[1m[31mp[1m[31my[0m[39m[1m[31mp[1m[31my[1m[31mt[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [14D[90mhon3 -m venv .[39m[14D[1m[31mt[1m[31mh[0m[39m[1m[31mt[0m[39m[0m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [14D[90mhon3 -m venv .[39m[14D[1m[31mp[1m[31my[0m[39m[0m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [15D[90mlint tracker.py[39m[15D[1m[31mp[1m[31my[1m[31ml[0m[39m[1m[31ml[1m[31mi[0m[39m[1m[31mi[1m[31mn[0m[39m[0m[32mp[0m[32my[0m[32ml[0m[32mi[0m[32mn[32mt[39m[39m [39m[4mt[24m[4mt[39m[4mr[24m[4mr[39m[4ma[24m[4ma[39m[4mn[24m[39m [39m [39m [39m [39m [39m [90msaction.py[39m[10D[4mn[39m[4ms[24m[4ms[39m[4ma[39m[4mc[39m[4mt[39m[4mi[39m[4mo[39m[4mn[39m[4m.[39m[4mp[39m[4my[24m[?1l>[?2004l
+]2;pylint transaction.py]1;pylint
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+[1m[7m%[27m[1m[0m                                                                                ]2;naimulhasan@aphrodite:~/Developer/nuke/cs103/cosi103a-pa02/pa02]1;..03a-pa02/pa02[0m[27m[24m[J[01;32m➜  [36mpa02[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[1m[31mp[0m[39m[1m[31mp[0m[39m[90mylint transaction.py[39m[20D[1m[31mp[1m[31my[0m[39m[39m;[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [18D[1m[31mo[0m[39m[1m[31mo[1m[31mm[0m[39m[1m[31mm[1m[31mt[0m[39m[1m[31mm[0m[39m[0m[39m [1m[31mo[0m[39m[0m[39m [0m[39m  [90mlint transaction.py[39m[19D[1m[31mp[1m[31my[1m[31ml[0m[39m[1m[31ml[1m[31mi[0m[39m[1m[31mi[1m[31mn[0m[39m[0m[32mp[0m[32my[0m[32ml[0m[32mi[0m[32mn[32mt[39m[39m [39m[4mt[24m[4mt[39m[4mr[24m[4mr[39m[4ma[24m[4ma[39m[4mc[24m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [10D[90mker.py[39m[4mc[39m[4mk[39m[4me[39m[4mr[39m[4m.[39m[4mp[39m[4my[24m[?1l>[?2004l
+]2;pylint tracker.py]1;pylint************* Module tracker
+tracker.py:134:0: C0325: Unnecessary parens after 'return' keyword (superfluous-parens)
+tracker.py:45:0: C0103: Constant name "menu" doesn't conform to UPPER_CASE naming style (invalid-name)
+tracker.py:95:8: W0621: Redefining name 'category' from outer scope (line 40) (redefined-outer-name)
+tracker.py:63:0: C0116: Missing function or method docstring (missing-function-docstring)
+tracker.py:63:0: R0914: Too many local variables (16/15) (too-many-locals)
+tracker.py:65:4: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+tracker.py:69:15: E0601: Using variable 'category' before assignment (used-before-assignment)
+tracker.py:63:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+tracker.py:63:0: R0912: Too many branches (13/12) (too-many-branches)
+tracker.py:63:0: R0915: Too many statements (59/50) (too-many-statements)
+tracker.py:140:4: W0105: String statement has no effect (pointless-string-statement)
+tracker.py:157:10: C0209: Formatting a regular string which could be a f-string (consider-using-f-string)
+tracker.py:162:14: C0209: Formatting a regular string which could be a f-string (consider-using-f-string)
+tracker.py:164:0: C0116: Missing function or method docstring (missing-function-docstring)
+tracker.py:165:10: C0209: Formatting a regular string which could be a f-string (consider-using-f-string)
+tracker.py:167:0: C0116: Missing function or method docstring (missing-function-docstring)
+tracker.py:168:10: C0209: Formatting a regular string which could be a f-string (consider-using-f-string)
+
+------------------------------------------------------------------
+Your code has been rated at 7.67/10 (previous run: 7.67/10, +0.00)
+
+[1m[7m%[27m[1m[0m                                                                                ]2;naimulhasan@aphrodite:~/Developer/nuke/cs103/cosi103a-pa02/pa02]1;..03a-pa02/pa02[0m[27m[24m[J[01;31m➜  [36mpa02[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[90mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+]2;exit]1;exit
+Script done on Fri Mar 25 08:38:29 2022
