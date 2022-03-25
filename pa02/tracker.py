@@ -64,14 +64,17 @@ def process_choice(choice):
 
     if choice=='0':
         return
+
     elif choice=='1':
         cats = category.select_all()
         print_categories(cats)
+
     elif choice=='2':
         name = input("category name: ")
         desc = input("category description: ")
         cat = {'name':name, 'desc':desc}
         category.add(cat)
+        
     elif choice=='3':
         print("modifying category")
         rowid = int(input("rowid: "))
@@ -79,6 +82,29 @@ def process_choice(choice):
         desc = input("new category description: ")
         cat = {'name':name, 'desc':desc}
         category.update(rowid,cat)
+
+    elif choice == '7':
+        print("summarize transactions by date")
+        date = input("Enter a date in MM-DD-YYYY: ")
+        transactions.summarize_by_category(date)
+
+    elif choice == '8':
+        print('summarize transactions by month (MM)')
+        month = input("Enter a month in MM: ")
+        transactions.summarize_by_month(month)
+
+    elif choice == '9':
+        print('summarize transactions by year in YYYY')
+        year = input("Enter a year in YYYY: ")
+        transactions.summarize_by_year(year)
+
+    elif choice == '10':
+        print('summarize transactions by category')
+        transactions.summarize_by_category()
+
+    elif choice == '11':
+        print(menu)
+
     else:
         print("choice",choice,"not yet implemented")
 
