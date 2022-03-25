@@ -33,9 +33,10 @@ could be replaced with PostgreSQL or Pandas or straight python lists
 
 #from transactions import Transaction
 from category import Category
+from transaction import Transaction
 import sys
 
-#transactions = Transaction('tracker.db')
+transactions = Transaction('tracker.db')
 category = Category('tracker.db')
 
 
