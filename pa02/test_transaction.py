@@ -35,6 +35,27 @@ def small_db(empty_db):
     empty_db.delete(id2)
 
 
+@pytest.mark.add_transaction
+def test_add_transaction(small_db):
+    ''' add a transaction to db, the select it, then delete it'''
+
+    tran0 = {'item_num': 15, 'amount': 131231, 'category': 'abc',
+            'date': '06-07-2011', 'description': 'alphabets'}
+    trans0 = small_db.select_all()
+    small_db.add(tran0)
+    trans1 = small_db.select_all()
+    assert len(trans1) == len(trans0) + 1
+
+
+@pytest.mark.delete_transaction
+def test_delete_transaction(small_db):
+    ''' delete the row and check if the length decreased'''
+    
+    trans1 = small_db.select_all()
+    small_db.delete(1)
+    trans2 = small_db.select_all()
+    assert len(trans2) == len(trans1)-1
+
 @pytest.mark.summarize_by_date
 def test_summarize_by_date(small_db):
     expected = {'rowid': 1, 'item_num': 12, 'amount': 13, 'category': 'parking',
