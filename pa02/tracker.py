@@ -36,7 +36,7 @@ from category import Category
 from transaction import Transaction
 import sys
 
-transactions = Transaction('tracker.db')
+transaction = Transaction('tracker.db')
 category = Category('tracker.db')
 
 
@@ -83,24 +83,45 @@ def process_choice(choice):
         cat = {'name':name, 'desc':desc}
         category.update(rowid,cat)
 
+    elif choice == '4':
+        print("show transactions")
+        trans = transaction.select_all()
+        print_transactions(trans)
+    
+    elif choice == '5':
+        print('add transaction')
+        item_num = int(input("transaction item no: "))
+        amount = int(input("amount: "))
+        category = input("category name: ")
+        date = input("date: ")
+        description = input("category description: ")
+        trans = {'item_num':item_num,'amount':amount, 'category': category, 
+        'date': date, 'description': description}
+        transaction.add(trans)
+
+    elif choice == '6':
+        print('delete transactions')
+        row_id = int(input("rowid: "))
+        transaction.delete(row_id)
+
     elif choice == '7':
         print("summarize transactions by date")
-        date = input("Enter a date in MM-DD-YYYY: ")
-        transactions.summarize_by_category(date)
+        date = input("Enter a date in MM-DD-YYYY:")
+        transaction.summarize_by_date(date)
 
     elif choice == '8':
         print('summarize transactions by month (MM)')
         month = input("Enter a month in MM: ")
-        transactions.summarize_by_month(month)
+        transaction.summarize_by_month(month)
 
     elif choice == '9':
         print('summarize transactions by year in YYYY')
         year = input("Enter a year in YYYY: ")
-        transactions.summarize_by_year(year)
+        transaction.summarize_by_year(year)
 
     elif choice == '10':
         print('summarize transactions by category')
-        transactions.summarize_by_category()
+        transaction.summarize_by_category()
 
     elif choice == '11':
         print(menu)
