@@ -1,3 +1,4 @@
+# pylint: disable=wrong-import-order
 #! /opt/miniconda3/bin/python3
 '''
 tracker is an app that maintains a list of personal
@@ -26,7 +27,7 @@ In place of SQL queries, we will have method calls.
 
 This app will store the data in a SQLite database ~/tracker.db
 
-Note the actual implementation of the ORM is hidden and so it 
+Note the actual implementation of the ORM is hidden and so it
 could be replaced with PostgreSQL or Pandas or straight python lists
 
 '''
@@ -34,7 +35,6 @@ could be replaced with PostgreSQL or Pandas or straight python lists
 #from transactions import Transaction
 from category import Category
 from transaction import Transaction
-import sys
 
 transaction = Transaction('tracker.db')
 category = Category('tracker.db')
@@ -74,7 +74,7 @@ def process_choice(choice):
         desc = input("category description: ")
         cat = {'name':name, 'desc':desc}
         category.add(cat)
-        
+
     elif choice=='3':
         print("modifying category")
         rowid = int(input("rowid: "))
@@ -87,7 +87,7 @@ def process_choice(choice):
         print("show transactions")
         trans = transaction.select_all()
         print_transactions(trans)
-    
+
     elif choice == '5':
         print('add transaction')
         item_num = int(input("transaction item no: "))
@@ -95,7 +95,7 @@ def process_choice(choice):
         category = input("category name: ")
         date = input("date: ")
         description = input("category description: ")
-        trans = {'item_num':item_num,'amount':amount, 'category': category, 
+        trans = {'item_num':item_num,'amount':amount, 'category': category,
         'date': date, 'description': description}
         transaction.add(trans)
 
@@ -158,7 +158,7 @@ def print_transactions(items):
         'id', 'item #','amount','category','date','description'))
     print('-'*60)
     for item in items:
-        values = tuple(item.values()) 
+        values = tuple(item.values())
         print("%-3s %-10d %-10d %-10s %-10s %-30s"%values)
 
 def print_category(cat):
@@ -174,4 +174,3 @@ def print_categories(cats):
 # here is the main call!
 
 toplevel()
-
