@@ -75,7 +75,7 @@ class Transaction():
         con = sqlite3.connect(self.dbfile)
         cur = con.cursor()
         #date format is MM-DD-YYYY
-        cur.execute("SELECT date FROM transactions WHERE date LIKE ?", ('%'+date+'%',))
+        cur.execute("SELECT rowid,* FROM transactions WHERE date LIKE ?", ('%'+date+'%',))
         tuples = cur.fetchall()
         con.commit()
         con.close()
@@ -85,7 +85,7 @@ class Transaction():
         '''return a list of transactions grouped by month from date'''
         con = sqlite3.connect(self.dbfile)
         cur = con.cursor()
-        cur.execute("SELECT date FROM transactions WHERE date LIKE ?", (month+'-%',))
+        cur.execute("SELECT rowid,* FROM transactions WHERE date LIKE ?", (month+'-%',))
         tuples = cur.fetchall()
         con.commit()
         con.close()
@@ -95,18 +95,19 @@ class Transaction():
         '''return a list of transactions grouped by year from date'''
         con = sqlite3.connect(self.dbfile)
         cur = con.cursor()
-        cur.execute("SELECT date FROM transactions WHERE date LIKE ?", ('%-'+year,))
+        cur.execute("SELECT rowid,* FROM transactions WHERE date LIKE ?", ('%-'+year,))
         tuples = cur.fetchall()
         con.commit()
         con.close()
         return to_trans_dict_list(tuples)
 
-    def summarize_by_category(self):
+    def summarize_by_category(self, category):
         '''return a list of transactions grouped by category'''
         con = sqlite3.connect(self.dbfile)
         cur = con.cursor()
-        cur.execute("SELECT category, sum(amount) FROM transactions GROUP BY category")
+        cur.execute("SELECT rowid,* FROM transactions WHERE category=(?)", (category,))
         tuples = cur.fetchall()
+        print(tuples)
         con.commit()
         con.close()
-        return to_trans_dict(tuples)
+        return to_trans_dict_list(tuples)

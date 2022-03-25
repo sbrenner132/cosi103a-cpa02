@@ -107,22 +107,23 @@ def process_choice(choice):
     elif choice == '7':
         print("summarize transactions by date")
         date = input("Enter a date in MM-DD-YYYY:")
-        transaction.summarize_by_date(date)
-
+        items = transaction.summarize_by_date(date)
+        print_transactions(items)
     elif choice == '8':
         print('summarize transactions by month (MM)')
         month = input("Enter a month in MM: ")
-        transaction.summarize_by_month(month)
-
+        items = transaction.summarize_by_month(month)
+        print_transactions(items)
     elif choice == '9':
         print('summarize transactions by year in YYYY')
         year = input("Enter a year in YYYY: ")
-        transaction.summarize_by_year(year)
-
+        items = transaction.summarize_by_year(year)
+        print_transactions(items)
     elif choice == '10':
         print('summarize transactions by category')
-        transaction.summarize_by_category()
-
+        category = input("Enter a category: ")
+        items = transaction.summarize_by_category(category)
+        print_transactions(items)
     elif choice == '11':
         print(menu)
 
@@ -153,12 +154,12 @@ def print_transactions(items):
         print('no items to print')
         return
     print('\n')
-    print("%-10s %-10d %-10s %-10d %-30s"%(
-        'item #','amount','category','date','description'))
-    print('-'*40)
+    print("%-3s %-10s %-10s %-10s %-10s %-30s"%(
+        'id', 'item #','amount','category','date','description'))
+    print('-'*60)
     for item in items:
         values = tuple(item.values()) 
-        print("%-10s %-10d %-10s %-10d %-30s"%values)
+        print("%-3s %-10d %-10d %-10s %-10s %-30s"%values)
 
 def print_category(cat):
     print("%-3d %-10s %-30s"%(cat['rowid'],cat['name'],cat['desc']))
