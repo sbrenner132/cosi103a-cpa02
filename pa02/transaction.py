@@ -107,7 +107,6 @@ class Transaction():
         cur = con.cursor()
         cur.execute("SELECT rowid,* FROM transactions WHERE category=(?)", (category,))
         tuples = cur.fetchall()
-        print(tuples)
         con.commit()
         con.close()
         return to_trans_dict_list(tuples)
