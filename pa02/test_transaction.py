@@ -42,12 +42,32 @@ def test_show_transactions(small_db):
     assert expected == actual
 
 @pytest.mark.add
-def test_add_transactions(empty_db):
+def test_add_transactions1(empty_db):
     tran = {'item_num':1,'amount':1, 'category': 'test1',
     'date': '3/21/2022', 'description': 'testing1'}
     expected = [{'rowid': 1, 'item_num': 1.0, 'amount': 1.0, 'category': 'test1', 'date': '3/21/2022', 'description': 'testing1'}]
     empty_db.add(tran)
     actual = empty_db.select_all()
+    assert expected == actual
+
+@pytest.mark.add
+def test_add_transactions2(empty_db):
+    tran = {'item_num':2,'amount':2, 'category': 'test2',
+    'date': '3/22/2022', 'description': 'testing2'}
+    expected = [{'rowid': 1, 'item_num': 2.0, 'amount': 2.0, 'category': 'test2', 'date': '3/22/2022', 'description': 'testing2'}]
+    empty_db.add(tran)
+    actual = empty_db.select_all()
+    assert expected == actual
+
+@pytest.mark.add
+def test_add_transactions3(small_db):
+    tran = {'item_num':2,'amount':2, 'category': 'test2',
+    'date': '3-22-2022', 'description': 'testing2'}
+    expected = [{'rowid': 1, 'item_num': 12.0, 'amount': 13.0, 'category': 'parking', 'date': '06-06-2001', 'description': 'the parking ticket actually'},
+                {'rowid': 2, 'item_num': 10.0, 'amount': 1.0, 'category': 'parking', 'date': '05-05-2001', 'description': 'the parking ticket actually, why????'},
+                {'rowid': 3, 'item_num': 2.0, 'amount': 2.0, 'category': 'test2', 'date': '3-22-2022', 'description': 'testing2'}]
+    small_db.add(tran)
+    actual = small_db.select_all()
     assert expected == actual
 
 @pytest.mark.delete
