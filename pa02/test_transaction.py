@@ -42,4 +42,4 @@ def test_summarize_by_year(small_db):
 
 @pytest.mark.summarize_by_category
 def test_summarize_by_category(small_db):
-    small_db.summarize_by_category()
+    small_db.summarize_by_category('parking')
